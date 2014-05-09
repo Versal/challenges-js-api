@@ -89,7 +89,12 @@ window.ChallengesIframeApi.prototype._scoringStrategies = {
     if (!_.isArray(response)) throw new Error('`response` argument must be an array for the `subset` scoring strategy');
     if (prompt.length === 0) return 0;
 
-    common = deepIntersection(prompt, response);
+    common = _.filter(response, function(responseAnswer) {
+      return _.some(prompt, function(promptAnswer) {
+        _.isEqual(responseAnswer, promptAnswer);
+      });
+    });
+
     return common.length / prompt.length;
   },
 
