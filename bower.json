@@ -15,5 +15,10 @@
   ],
   "dependencies": {
     "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.18",
+    "chai": "~1.9",
+    "versal-component-runtime": "~0.2.1"
   }
 }
