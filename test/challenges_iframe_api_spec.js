@@ -36,4 +36,23 @@ describe(ChallengesIframeApi, function() {
     var iframeApi = new ChallengesIframeApi();
     iframeApi.setChallenges(challenges);
   });
+
+  it('saves scoring in the learnerState', function(done) {
+    var challenges = [{prompt: 'Sky?', answers: 'blue', scoring: 'strict'}];
+    var responses = ['blue'];
+    var scoring = {responses: responses, scores: [1], totalScore: 1};
+
+    window.parent.addEventListener('message', function(event) {
+      if (event.data.event === 'setLearnerState') {
+        window.parent.removeEventListener('message', arguments.callee);
+
+        chai.expect(event.data.data).to.deep.equal({'vs-scores': scoring});
+        done();
+      }
+    });
+
+    var iframeApi = new ChallengesIframeApi();
+    iframeApi.setChallenges(challenges);
+    iframeApi.scoreChallenges(responses);
+  });
 });

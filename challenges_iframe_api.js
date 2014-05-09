@@ -13,6 +13,8 @@ window.ChallengesIframeApi.prototype.destroy = function() {
 window.ChallengesIframeApi.prototype.setChallenges = function(challenges) {
   if (!_.isArray(challenges)) throw new Error('challenges argument must be an array');
 
+  this._challenges = challenges;
+  this._callChangeCallback();
   window.parent.postMessage({event: 'setAttributes', data: {'vs-challenges': challenges}}, '*');
 };
 
@@ -27,8 +29,9 @@ window.ChallengesIframeApi.prototype.scoreChallenges = function(responses) {
     totalScore += scores[i];
   }
 
-  var scoring = {responses: responses, scores: scores, totalScore: totalScore};
-  window.parent.postMessage({event: 'setLearnerState', data: {'vs-scores': scoring}}, '*');
+  this._scoring = {responses: responses, scores: scores, totalScore: totalScore};
+  this._callChangeCallback();
+  window.parent.postMessage({event: 'setLearnerState', data: {'vs-scores': this._scoring}}, '*');
 };
 
 window.ChallengesIframeApi.prototype._handleMessage = function(event) {
