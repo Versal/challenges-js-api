@@ -14,4 +14,4 @@ Include this in your iframe gadget's `index.html`:
 
 TODO!
 
-For now, please refer to our [example gadget](https://github.com/Versal/matching-challenge-example-gadget).
+For now, please refer to our [Versal/matching-challenge-example-gadget](https://github.com/Versal/matching-challenge-example-gadget) and [Versal/challenger](https://github.com/Versal/challenger).
