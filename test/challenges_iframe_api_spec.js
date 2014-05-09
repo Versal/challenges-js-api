@@ -20,4 +20,20 @@ describe(ChallengesIframeApi, function() {
 
     window.postMessage({event: 'learnerStateChanged', data: {'vs-scores': scoring}}, '*');
   });
+
+  it('saves challenges in the attributes', function(done) {
+    var challenges = [{prompt: 'Sky?', answers: 'blue', scoring: 'strict'}];
+
+    window.parent.addEventListener('message', function(event) {
+      if (event.data.event === 'setAttributes') {
+        window.parent.removeEventListener('message', arguments.callee);
+
+        chai.expect(event.data.data).to.deep.equal({'vs-challenges': challenges});
+        done();
+      }
+    });
+
+    var iframeApi = new ChallengesIframeApi();
+    iframeApi.setChallenges(challenges);
+  });
 });

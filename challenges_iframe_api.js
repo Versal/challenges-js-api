@@ -3,7 +3,7 @@ window.ChallengesIframeApi = function(changeCallback) {
   window.addEventListener('message', this._handleMessage);
   this._challenges = [];
   this._scoring = {};
-  this._changeCallback = changeCallback;
+  this._changeCallback = changeCallback || function(){};
 };
 
 window.ChallengesIframeApi.prototype.destroy = function() {
