@@ -5,6 +5,7 @@ module.exports = function(config) {
       'bower_components/versal-component-runtime/dist/runtime.min.js',
       'bower_components/underscore/underscore.js',
       'challenges_iframe_api.js',
+      'challenges_scoring_strategies.js',
       'test/*_spec.js'
     ],
     reporters: ['progress'],

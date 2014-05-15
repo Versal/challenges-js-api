@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Firefox 28.0.0 (Mac OS X 10.9)" package="" timestamp="2014-05-10T05:17:43" id="0" hostname="boof.local" tests="1" errors="0" failures="0" time="0">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:28.0) Gecko/20100101 Firefox/28.0"/>
+    </properties>
+    <testcase name="x" time="0" classname="Firefox 28.0.0 (Mac OS X 10.9).[object Object]"/>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>
