@@ -1,4 +1,4 @@
-# Challenges API [![Build Status](https://travis-ci.org/Versal/challenges-js-api.svg)](https://travis-ci.org/Versal/challenges-js-api)
+# Challenges API [![Build Status](https://travis-ci.org/Versal/challenges-js-api.svg?branch=master)](https://travis-ci.org/Versal/challenges-js-api)
 
 Makes creating and scoring challenges easier.
 
