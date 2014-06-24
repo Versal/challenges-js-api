@@ -3,6 +3,7 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
     files: [
       'bower_components/versal-component-runtime/dist/runtime.min.js',
+      'bower_components/underscore/underscore.js',
       'challenges_iframe_api.js',
       'test/*_spec.js'
     ],
