@@ -20,13 +20,13 @@ window.ChallengesIframeApi.prototype.setChallenges = function(challenges) {
 
 window.ChallengesIframeApi.prototype.scoreChallenges = function(responses) {
   if (!_.isArray(responses)) throw new Error('responses argument must be an array');
-  if (responses.length !== this._challenges.length) throw new Error('responses argument must have same length as challenges');
-
   var scores = [];
   var totalScore = 0;
   for (var i=0; i<this._challenges.length; i++) {
-    scores[i] = this._scoreChallenge(this._challenges[i], responses[i]);
-    totalScore += scores[i];
+    if (responses[i]) {
+      scores[i] = this._scoreChallenge(this._challenges[i], responses[i]);
+      totalScore += scores[i];
+    }
   }
 
   this._scoring = {responses: responses, scores: scores, totalScore: totalScore};
