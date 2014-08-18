@@ -8,6 +8,7 @@ Makes creating and scoring challenges easier.
 
 Include this in your iframe gadget's `index.html`:
 
+    <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/versal-challenges-js-api/challenges_iframe_api.js"></script>
 
 ## Usage
