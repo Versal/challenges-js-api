@@ -51,14 +51,14 @@ window.ChallengesIframeApi.prototype._callChangeCallback = function() {
 window.ChallengesIframeApi.prototype._messageHandlers = {
   attributesChanged: function(attributes) {
     if (!_.isEqual(this._challenges, attributes['vs-challenges'])) {
-      this._challenges = attributes['vs-challenges'];
+      this._challenges = attributes['vs-challenges'] || [];
       this._callChangeCallback();
     }
   },
 
   learnerStateChanged: function(learnerState) {
     if (!_.isEqual(this._scoring, learnerState['vs-scores'])) {
-      this._scoring = learnerState['vs-scores'];
+      this._scoring = learnerState['vs-scores'] || {};
       this._callChangeCallback();
     }
   }
