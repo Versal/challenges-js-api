@@ -11,6 +11,21 @@ Include this in your iframe gadget's `index.html`:
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/versal-challenges-js-api/challenges_iframe_api.js"></script>
 
+## Dependencies
+
+#### [underscore](http://underscorejs.org/)
+If you are not already using underscore, here is perhaps the simplest way to include it in your gadget.
+
+```
+bower install underscore
+```
+
+Include it in your iframe gadget's `index.html` before
+versal-challenges-js-api:
+    
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/versal-challenges-js-api/challenges_iframe_api.js"></script>
+
 ## Usage
 
 TODO!
